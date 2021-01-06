@@ -5,20 +5,20 @@ const taskSelections = document.getElementById('taskSelections');
 const selectionBtns = [ ...taskSelections.getElementsByClassName('selectionBtn')];
 const output = document.getElementById('output');
 const outputTbody = output.querySelector('tbody');
-const TaskField = document.getElementById('TaskField');
+const taskField = document.getElementById('taskField');
 const addBtn = document.getElementById('addBtn');
 const statuses = { working: '作業中', complete: '完了' };
 const currentSelection = { status: '全て' };
 let currentId = 0;
 
 addBtn.addEventListener('click', () => {
-  if (TaskField.value === '') return;
+  if (taskField.value === '') return;
   tasks.push({
     id: currentId,
-    content: TaskField.value,
+    content: taskField.value,
     status: statuses.working
   });
-  TaskField.value = '';
+  taskField.value = '';
   currentId++;
   outputTasks();
 });
