@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>test</title>
+    <meta http-equiv="content-type" charset="utf-8">
+    <script type="text/javascript" src="app.js" defer></script>
+  </head>
+
+  <body>
+    <h1>ToDoリスト</h1>
+    <div id="taskSelections">
+      <label>
+        <input type="radio" class="selectionBtn" name="selection" value="全て" checked="checked" />
+        すべて
+      </label>
+      <label>
+        <input type="radio" class="selectionBtn" name="selection"  value="作業中" />
+        作業中
+      </label>
+      <label>
+        <input type="radio" class="selectionBtn" name="selection"  value="完了" />
+        完了
+      </label>
+    </div>
+    <table id="output">
+      <thead>
+        <th>ID</th>
+        <th>コメント</th>
+        <th>状態</th>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <h1>タスクの新規追加</h1>
+    <div>
+      <input type="text" id="TaskField"/>
+      <input type="button" id="addBtn" value="追加" />
+    </div>
+  </body>
+</html>
