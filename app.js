@@ -32,7 +32,7 @@ const outputTasks = () => {
     tr.appendChild(createCell(index));
     tr.appendChild(createCell(task.content));
     tr.appendChild(createButton(task.status));
-    tr.appendChild(createButton('削除'));
+    tr.appendChild(createButton('削除', task.id, deleteTask));
     outputTbody.appendChild(tr);
   });
 };
@@ -43,9 +43,17 @@ const createCell = (value) => {
   return cell;
 };
 
-const createButton = (value) => {
+const createButton = (value, id, clickEvent) => {
   const button = document.createElement('input');
   button.type = 'button';
   button.value = value;
+  button.addEventListener('click', () => {clickEvent(id)});
   return button;
+};
+
+const deleteTask = (id) => {
+  tasks.splice(id, 1);
+  tasks.forEach((task, index) => task.id = index);
+  currentId = tasks.length;
+  outputTasks();
 };
